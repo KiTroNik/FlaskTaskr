@@ -24,7 +24,7 @@ def login_required(test):
         else:
             flash('Login required')
             return redirect(url_for('login'))
-    return wrap()
+    return wrap
 
 
 # route handlers
@@ -75,7 +75,7 @@ def tasks():
 
 # Add new task
 @app.route('/add/', methods=['POST'])
-@login_required()
+@login_required
 def new_task():
     g.db = connect_db()
 
@@ -114,7 +114,7 @@ def complete(task_id):
 
 # Delete task
 @app.route('/delete/<int:task_id>/')
-@login_required()
+@login_required
 def delete_entry(task_id):
     g.db = connect_db()
     g.db.execute('delete from tasks where task_id='+str(task_id))
