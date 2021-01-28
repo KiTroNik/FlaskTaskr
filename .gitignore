@@ -1,3 +1,6 @@
 .vscode/
 flasktaskr_env/
 project/_config.py
+*.pyc
+__pycache__/
+*.DS_Store
