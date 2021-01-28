@@ -2,5 +2,5 @@
 flasktaskr_env/
 project/_config.py
 *.pyc
-__pycache__/
+project/__pycache__/
 *.DS_Store
