@@ -2,14 +2,15 @@ from functools import wraps
 from flask import Flask, flash, redirect, render_template, request, session, url_for, g
 from forms import AddTaskForm
 from flask_sqlalchemy import SQLAlchemy
-from models import Task
 
 
 # config
-
 app = Flask(__name__)
 app.config.from_object('_config')
 db = SQLAlchemy(app)
+
+
+from models import Task
 
 
 # helpers
