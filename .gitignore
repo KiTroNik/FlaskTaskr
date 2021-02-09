@@ -4,3 +4,4 @@ project/_config.py
 *.pyc
 project/__pycache__/
 *.DS_Store
+project/htmlcov/
