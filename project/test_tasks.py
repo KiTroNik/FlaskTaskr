@@ -3,13 +3,13 @@ import unittest
 
 from views import app, db
 from _config import basedir
-from models import User
+from models import User, Task
 
 
 TEST_DB = 'test.db'
 
 
-class UserTests(unittest.TestCase):
+class TasksTests(unittest.TestCase):
     # setup
     def setUp(self):
         app.config['TESTING'] = True
@@ -43,6 +43,15 @@ class UserTests(unittest.TestCase):
         new_user = User(name=name, email=email, password=password)
         db.session.add(new_user)
         db.session.commit()
+
+    def create_task(self):
+        return self.app.post('add/', data=dict(
+            name='Go to the bank',
+            due_date='02/05/2015',
+            priority='1',
+            posted_date='02/04/2015',
+            status='1'
+        ), follow_redirects=True)
 
     # tests
     def test_logged_in_users_can_access_tasks_page(self):
