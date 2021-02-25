@@ -9,16 +9,12 @@ from project import db
 from project.models import Task
 
 
-################
-#### config ####
-################
+# config
 
 tasks_blueprint = Blueprint('tasks', __name__)
 
 
-##########################
-#### helper functions ####
-##########################
+# helper functions
 
 def login_required(test):
     @wraps(test)
@@ -41,9 +37,7 @@ def closed_tasks():
         status='0').order_by(Task.due_date.asc())
 
 
-################
-#### routes ####
-################
+# routes
 
 @tasks_blueprint.route('/tasks/')
 @login_required
@@ -52,7 +46,8 @@ def tasks():
         'tasks.html',
         form=AddTaskForm(request.form),
         open_tasks=open_tasks(),
-        closed_tasks=closed_tasks()
+        closed_tasks=closed_tasks(),
+        username=session['name']
     )
 
 

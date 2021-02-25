@@ -1,7 +1,4 @@
-#################
-#### imports ####
-#################
-
+# imports
 from functools import wraps
 from flask import flash, redirect, render_template, \
     request, session, url_for, Blueprint
@@ -12,16 +9,12 @@ from project import db
 from project.models import User
 
 
-################
-#### config ####
-################
+# config
 
 users_blueprint = Blueprint('users', __name__)
 
 
-##########################
-#### helper functions ####
-##########################
+# helper functions
 
 
 def login_required(test):
@@ -35,9 +28,7 @@ def login_required(test):
     return wrap
 
 
-################
-#### routes ####
-################
+# routes
 
 @users_blueprint.route('/logout/')
 @login_required
@@ -45,6 +36,7 @@ def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
     session.pop('role', None)
+    session.pop('name', None)
     flash('Goodbye!')
     return redirect(url_for('users.login'))
 
@@ -60,6 +52,7 @@ def login():
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['role'] = user.role
+                session['name'] = user.name
                 flash('Welcome!')
                 return redirect(url_for('tasks.tasks'))
             else:
