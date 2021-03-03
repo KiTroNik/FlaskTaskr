@@ -1,7 +1,7 @@
 import datetime
 from flask import Flask, render_template, request
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.bcrypt import Bcrypt
+from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import Bcrypt
 
 
 app = Flask(__name__)
