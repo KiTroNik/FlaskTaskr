@@ -8,6 +8,7 @@ from flask.ext.bcrypt import Bcrypt
 app = Flask(__name__)
 
 #app.config.from_pyfile('_config.py')
+basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['DATABASE'] = 'flasktaskr.db'
 app.config['WTF_CSRF_ENABLED'] = True
 app.config['DEBUG'] = False
