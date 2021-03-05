@@ -27,6 +27,10 @@ ca8db020f825d6 e5869c6c9e62f0 2720f5c72b04a4 299965df6b1f8a 1e334b13a97d91
 08fb2ba42bc167 a02ec44812f7f7 bad03fda9121ef 1b35276bc989d9 18acbf91898ac5"""
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'flasktaskr.db')
 
+#####################################################################
+#### config for heroku i dont know why line abowe is not working ####
+#####################################################################
+
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 

@@ -9,6 +9,7 @@ TEST_DB = 'test.db'
 
 # only for heroku i dont know why it doesnt see _config.py
 basedir = os.path.abspath(os.path.dirname(__file__))
+# only for heroku i dont know why it doesnt see _config.py
 
 
 class MainTests(unittest.TestCase):
