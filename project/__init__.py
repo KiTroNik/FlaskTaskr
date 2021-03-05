@@ -7,7 +7,12 @@ from flask.ext.bcrypt import Bcrypt
 
 app = Flask(__name__)
 
-#app.config.from_pyfile('_config.py')
+# app.config.from_pyfile('_config.py')
+
+#####################################################################
+#### config for heroku i dont know why line abowe is not working ####
+#####################################################################
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['DATABASE'] = 'flasktaskr.db'
 app.config['WTF_CSRF_ENABLED'] = True
@@ -20,7 +25,6 @@ d7bc70a5ad2c32 486408d0573c04 c9929bc25f4a4c 1e0591f39764cf b936e2c45f97cc
 ca8db020f825d6 e5869c6c9e62f0 2720f5c72b04a4 299965df6b1f8a 1e334b13a97d91
 83fcd0426983ab 2fd0472f017e9b 01349f06e83a5f 658a910da171ff e56545c9929197
 08fb2ba42bc167 a02ec44812f7f7 bad03fda9121ef 1b35276bc989d9 18acbf91898ac5"""
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'flasktaskr.db')
 
 bcrypt = Bcrypt(app)

@@ -2,10 +2,13 @@ import os
 import unittest
 
 from project import app, db
-from project._config import basedir
+# from project._config import basedir
 from project.models import User
 
 TEST_DB = 'test.db'
+
+# only for heroku i dont know why it doesnt see _config.py
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class MainTests(unittest.TestCase):
