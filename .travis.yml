@@ -1,12 +1,16 @@
-# specify language
 language:
 - python
-# specify python version(s)
 python:
-- "3.9.0"
-# install dependencies
+- 3.9.0
 install:
 - pip install -r requirements.txt
-# run tests
 script:
 - nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: O/KrSH5DebfGHLeWiwoCpjF8DNG8K9FxOt9aeLVkW2wpxXWy6le3u+gqO8ru1MA8iR8uFAIcc1OVTINpd4AldVkAeH9WU6TBhit7H2Vm/LYyZ3pvijtopK+EXnhOpMQ54Z4SutrJw7bRfitdMs5fzJHAKaV0UpK9N3uk1//MIOgvbA1qWQUGFsceYiWhjFCPXxHCMH+1qKSY4VnZMt9kUWdIy5ySUVx6AM6GzOqB6SUomsUoTt+fhLVrsKYlh4DnbNEV+YlvzXYLKy6eCcDh/a/MTEvI6CY1QMt2Iu74NBXnT/w1Jk/GBWe94QgOga/XW0/Q8TIWFlSN8vlQNWTrvXcqt0SKlH4IgfD79+lYbMUUl0GWNzKQquMmsKFNYl8YvQJIexTAZvu8F8hVroKgFV5JSJd7e7OcjYcEwA5uuuJUO4o//cJeIml6wPFjBTmtNxLaoCN9gOELs3wKvoScbbYJgSBKrL8+7YFJiCicTYG/AyIjGyp/Z04FI30M3W1w67S7AJK5RuX2g3q3o4bxBpQO/cc5zSHW1DGQ8GfPPzGJRg9+qcncGI9oPZluXgASY3RapJndswLTqF06EFRrEoYjzzo79hEdGDclIQ8YHfJgb9Q9BUsOULC/As4mC85Y6CMsqfsjF4EXPvGrwGZdXnF9apLCEzckG5sXLUwpXHI=
+  app: evening-inlet-85383
+  on:
+    repo: KiTroNik/FlaskTaskr
+  skip_cleanup: 'true'
