@@ -14,7 +14,7 @@ The technologies used in this projects are in the requirements.txt. Main technol
 * flask
 * SQLAlchemy
 * WTF Forms
-For CI I have used Travis.
+* For CI I have used Travis.
 	
 ## Setup
 To run this project locally, activate virtural env, clone repository, install requirements and launch by run.py:
